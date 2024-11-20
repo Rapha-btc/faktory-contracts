@@ -102,7 +102,7 @@
     
     ;; STX distribution (first buy premium fee)
     (try! (stx-transfer-to .name-faktory-dex u666667)) ;; stx-in-dex (putting full address better?)
-    (try! (stx-transfer-to 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM u333333)) ;; premium-first-buy / SP37Y7SH0KBPCVMYQNZWCA0AQJ4CD2K6YTWX2QEWD
+    (try! (stx-transfer-to 'ST3PF13W7Z0RRM42A8VZRVFQ75SV1K26RXEP8YGKJ u333333)) ;; premium-first-buy / SP37Y7SH0KBPCVMYQNZWCA0AQJ4CD2K6YTWX2QEWD
   
 
     ;; deploy fixed fee
