@@ -6,6 +6,16 @@ telemetry = false
 cache_dir = './.cache'
 requirements = []
 
+[contracts.faktory-dex-trait-v1]
+path = 'contracts/faktory-dex-trait-v1.clar'
+clarity_version = 2
+epoch = 2.5
+
+[contracts.faktory-trait-v1]
+path = 'contracts/faktory-trait-v1.clar'
+clarity_version = 2
+epoch = 2.5
+
 [contracts.name-faktory]
 path = 'contracts/name-faktory.clar'
 clarity_version = 2
@@ -16,10 +26,6 @@ path = 'contracts/name-faktory-dex.clar'
 clarity_version = 2
 epoch = 2.5
 
-[contracts.sip-010-trait-ft-standard]
-path = 'contracts/sip-010-trait-ft-standard.clar'
-clarity_version = 2
-epoch = 2.5
 [repl.analysis]
 passes = ['check_checker']
 

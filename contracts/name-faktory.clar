@@ -1,7 +1,7 @@
 ;; fak Powered By Faktory.fun
-;; v1.0 hash 363acbe80e3698b90cd0500fd8c64c56ec3d2caa674483aeb86d8772e8cf6fe3
+;; v1.0 
 
-(impl-trait .sip-010-trait-ft-standard.sip-010-trait) ;;'SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE
+(impl-trait .faktory-trait-v1.sip-010-trait) ;;'SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE
 
 (define-constant ERR-NOT-AUTHORIZED u401)
 (define-constant ERR-NOT-OWNER u402)
@@ -107,4 +107,21 @@
 
     ;; deploy fixed fee
     (try! (stx-transfer-to 'ST3NBRSFKX28FQ2ZJ1MAKX58HKHSDGNV5N7R21XCP u1000000)) ;; SP37Y7SH0KBPCVMYQNZWCA0AQJ4CD2K6YTWX2QEWD
+
+    (print { 
+        type: "faktory-trait-v1", 
+        name: "name",
+        symbol: "fak",
+        token-uri: u"https://szigdtxfspmofhxoytra.supabase.co/storage/v1/object/public/uri/c7qwl5oz-metadata.json", 
+        tokenContract: (as-contract tx-sender),
+        ammReceiver: 'ST2JHG361ZXG51QTKY2NQCVBPPRRE2KZB1HR05NNC,
+        supply: MAX, 
+        ;; decimals: 6, 
+        targetStx: u6000,
+        tokenToDex: u68961687931993,
+        tokenToDeployer: 38312068007,
+        stxToDex: u666667,
+        stxBuyFirstFee: u333333,
+        hash: "363acbe80e3698b90cd0500fd8c64c56ec3d2caa674483aeb86d8772e8cf6fe3"
+})
 )

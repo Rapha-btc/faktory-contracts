@@ -1,7 +1,7 @@
 ;; Faktory.Fun 
 ;; @version 1.0
-
-(use-trait fungible-token .sip-010-trait-ft-standard.sip-010-trait) ;; 'SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE
+(impl-trait .faktory-dex-trait-v1.dex-trait)
+(use-trait faktory-token .faktory-trait-v1.sip-010-trait) ;; 'SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE
 
 (define-constant ERR-MARKET-CLOSED (err u1001))
 (define-constant ERR-STX-NON-POSITIVE (err u1002))
@@ -32,7 +32,7 @@
 (define-data-var burn-rate uint u20)
 (define-data-var dev-premium uint u10)
 
-(define-public (buy (ft <fungible-token>) (ustx uint))
+(define-public (buy (ft <faktory-token>) (ustx uint))
   (begin
     (asserts! (is-eq DEX-TOKEN (contract-of ft)) ERR-TOKEN-NOT-AUTH)
     (asserts! (var-get open) ERR-MARKET-CLOSED)
@@ -71,7 +71,7 @@
                     stx-balance: u0, ft-balance: u0,
                     fee: fee, grad-fee: GRAD-FEE,
                     open: false})
-            (ok tokens-out)))
+            (ok true)))
         (begin
           (var-set stx-balance new-stx)
           (var-set ft-balance new-ft)
@@ -79,7 +79,7 @@
                   stx-balance: new-stx, ft-balance: new-ft,
                   fee: fee,
                   open: true})
-          (ok tokens-out))))))
+          (ok true))))))
 
 (define-read-only (get-in (ustx uint))
   (let ((total-stx (var-get stx-balance))
@@ -102,7 +102,7 @@
          new-stx: (+ total-stx stx-in),
          stx-to-grad: stx-to-grad})))
 
-(define-public (sell (ft <fungible-token>) (amount uint))
+(define-public (sell (ft <faktory-token>) (amount uint))
   (begin
     (asserts! (is-eq DEX-TOKEN (contract-of ft)) ERR-TOKEN-NOT-AUTH)
     (asserts! (is-eq contract-caller tx-sender) ERR-DIRECT-CALL-REQUIRED)
@@ -129,7 +129,7 @@
               stx-balance: new-stx, ft-balance: new-ft,
               fee: fee,
               open: true})
-      (ok stx-to-receiver))))
+      (ok true))))
 
 (define-read-only (get-out (amount uint))
   (let ((total-stx (var-get stx-balance))
