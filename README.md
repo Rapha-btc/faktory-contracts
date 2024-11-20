@@ -1,6 +1,6 @@
 # faktory.fun DEX
 
-A bonding curve DEX adapted optimized for faktory.fun implementation.
+A bonding curve DEX optimized for faktory.fun implementation.
 
 ## Overview
 
@@ -14,13 +14,12 @@ This project contains bonding curve DEX contracts that enable:
 
 Core contracts:
 
-- `name-faktory-dex.clar`: Main bonding curve implementation with buy/sell functions
+- `name-faktory-dex.clar`: Main bonding curve DEX implementation with buy/sell functions
 - `name-faktory.clar`: Token contract associated with the DEX
 
-## Key Functions
+## Core DEX trait
 
 ```clarity
-;; Core DEX trait
     ;; buy from the bonding curve dex
     (buy (<faktory-token> uint) (response bool uint))
 
@@ -53,13 +52,16 @@ Core contracts:
         ft-balance: uint,
         new-ft: uint
     } uint))
+```
 
+## Run console
 
-# Run console
+```bash
 clarinet console
 ```
 
-License
+## License
+
 MIT License
 
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
