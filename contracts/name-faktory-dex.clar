@@ -162,4 +162,10 @@
   (var-set burn-rate u20)
   (var-set dev-premium u10)
   (try! (stx-transfer? u1000000 tx-sender 'ST2REHHS5J3CERCRBEPMGH7921Q6PYKAADT7JP2VB)) ;;SP2Z2N5HGEK6KD2MBBKN0WH7MS1W70AYXBPBG0N2F
+  (print { 
+        type: "faktory-dex-trait-v1", 
+        dexContract: (as-contract tx-sender),
+        ammReceiver: 'ST2JHG361ZXG51QTKY2NQCVBPPRRE2KZB1HR05NNC,
+        hash: "363acbe80e3698b90cd0500fd8c64c56ec3d2caa674483aeb86d8772e8cf6fe3"
+   })
   (ok true))

@@ -114,7 +114,6 @@
         symbol: "fak",
         token-uri: u"https://szigdtxfspmofhxoytra.supabase.co/storage/v1/object/public/uri/c7qwl5oz-metadata.json", 
         tokenContract: (as-contract tx-sender),
-        ammReceiver: 'ST2JHG361ZXG51QTKY2NQCVBPPRRE2KZB1HR05NNC,
         supply: MAX, 
         ;; decimals: 6, 
         targetStx: u6000,
@@ -123,5 +122,5 @@
         stxToDex: u666667,
         stxBuyFirstFee: u333333,
         hash: "363acbe80e3698b90cd0500fd8c64c56ec3d2caa674483aeb86d8772e8cf6fe3"
-})
+   })
 )
