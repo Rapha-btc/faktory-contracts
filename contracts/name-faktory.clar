@@ -116,9 +116,9 @@
         tokenContract: (as-contract tx-sender),
         supply: MAX, 
         ;; decimals: 6, 
-        targetStx: u6000,
+        targetStx: u6000, ;; times 10^6 for u congruency
         tokenToDex: u68961687931993,
-        tokenToDeployer: 38312068007,
+        tokenToDeployer: u38312068007,
         stxToDex: u666667,
         stxBuyFirstFee: u333333,
         hash: "363acbe80e3698b90cd0500fd8c64c56ec3d2caa674483aeb86d8772e8cf6fe3"

@@ -166,6 +166,6 @@
         type: "faktory-dex-trait-v1", 
         dexContract: (as-contract tx-sender),
         ammReceiver: 'ST2JHG361ZXG51QTKY2NQCVBPPRRE2KZB1HR05NNC,
-        hash: "363acbe80e3698b90cd0500fd8c64c56ec3d2caa674483aeb86d8772e8cf6fe3"
+        ;; hash: "363acbe80e3698b90cd0500fd8c64c56ec3d2caa674483aeb86d8772e8cf6fe3"  ;; do we need a hash of that contract?
    })
   (ok true))
