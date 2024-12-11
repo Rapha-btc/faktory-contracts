@@ -96,8 +96,8 @@
 
 (begin 
     ;; ft distribution (first buy)
-    (try! (ft-mint? fak u68961687931993 .name-faktory-dex)) ;; supply-left (putting full address better?)
     (try! (ft-mint? fak u38312068007 tx-sender)) ;; ft-amount-bought (putting full address better?)
+    (try! (ft-mint? fak u68961687931993 .name-faktory-dex)) ;; supply-left (putting full address better?)
 
     
     ;; STX distribution (first buy premium fee)
