@@ -35,6 +35,7 @@
 (define-public (buy (ft <faktory-token>) (ustx uint))
   (begin
     (asserts! (is-eq DEX-TOKEN (contract-of ft)) ERR-TOKEN-NOT-AUTH)
+    (asserts! (is-eq contract-caller tx-sender) ERR-DIRECT-CALL-REQUIRED)
     (asserts! (var-get open) ERR-MARKET-CLOSED)
     (asserts! (> ustx u0) ERR-STX-NON-POSITIVE)
     (let ((total-stx (var-get stx-balance))

@@ -5,7 +5,6 @@ authors = []
 telemetry = false
 cache_dir = './.cache'
 requirements = []
-
 [contracts.faktory-dex-trait-v1]
 path = 'contracts/faktory-dex-trait-v1.clar'
 clarity_version = 2
@@ -26,6 +25,10 @@ path = 'contracts/name-faktory-dex.clar'
 clarity_version = 2
 epoch = 2.5
 
+[contracts.velar-proxy]
+path = 'contracts/velar-proxy.clar'
+clarity_version = 2
+epoch = 2.5
 [repl.analysis]
 passes = ['check_checker']
 
