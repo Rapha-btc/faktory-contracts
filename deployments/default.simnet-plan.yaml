@@ -60,6 +60,36 @@ plan:
             path: contracts/faktory-dex-trait-v1.clar
             clarity-version: 2
         - emulated-contract-publish:
+            contract-name: univ2-share-fee-to-trait
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/univ2-share-fee-to-trait.clar
+            clarity-version: 2
+        - emulated-contract-publish:
+            contract-name: path-apply_staging
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/path-apply_staging.clar
+            clarity-version: 2
+        - emulated-contract-publish:
+            contract-name: sip-010-trait-ft-standard
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/sip-010-trait-ft-standard.clar
+            clarity-version: 2
+        - emulated-contract-publish:
+            contract-name: univ2-share-fee-to
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/univ2-share-fee-to.clar
+            clarity-version: 2
+        - emulated-contract-publish:
+            contract-name: wstx
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/wstx.clar
+            clarity-version: 2
+        - emulated-contract-publish:
+            contract-name: buy-with-velar-faktory
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/buy-with-velar-faktory.clar
+            clarity-version: 2
+        - emulated-contract-publish:
             contract-name: name-faktory
             emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
             path: contracts/name-faktory.clar
@@ -68,5 +98,15 @@ plan:
             contract-name: name-faktory-dex
             emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
             path: contracts/name-faktory-dex.clar
+            clarity-version: 2
+        - emulated-contract-publish:
+            contract-name: tokensoft-token-v4k68639zxz
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/tokensoft-token-v4k68639zxz.clar
+            clarity-version: 2
+        - emulated-contract-publish:
+            contract-name: wstx-pepe
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/wstx-pepe.clar
             clarity-version: 2
       epoch: "2.5"

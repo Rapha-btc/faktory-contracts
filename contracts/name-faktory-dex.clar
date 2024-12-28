@@ -9,7 +9,7 @@
 (define-constant ERR-FT-NON-POSITIVE (err u1004))
 (define-constant ERR_NATIVE_FAILURE (err u99))
 (define-constant ERR-TOKEN-NOT-AUTH (err u401))
-(define-constant ERR-DIRECT-CALL-REQUIRED (err u402))
+(define-constant ERR-UNAUTHORIZED-CALLER (err u402))
 
 (define-constant THIS-CONTRACT (as-contract tx-sender))
 (define-constant FEE-RECEIVER 'ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5) ;; SPZYMEK0JYQMPGRTHM0TAMF0J2P70ZX4BHQZNHA8
@@ -18,6 +18,7 @@
 (define-constant CANT-BE-EVIL 'ST2NEB84ASENDXKYGJPQW86YXQCEFEX2ZQPG87ND) ;; SP000000000000000000002Q6VF78
 (define-constant DEV tx-sender)
 (define-constant DEX-TOKEN .name-faktory) ;; 'SP29D6YMDNAKN1P045T6Z817RTE1AC0JAA99WAX2B.fak-dot-fun-faktory
+(define-constant AUTHORIZED-CONTRACT .buy-with-velar-faktory) ;; 'SP3XXMS38VTAWTVPE5682XSBFXPTH7XCPEBTX8AN2
 
 ;; token constants
 (define-constant TARGET_STX u6000000000)
@@ -32,10 +33,17 @@
 (define-data-var burn-rate uint u20)
 (define-data-var dev-premium uint u10)
 
+;; Helper function to check if caller is authorized
+(define-private (is-valid-caller)
+  (or 
+    (is-eq contract-caller tx-sender)
+    (is-eq contract-caller AUTHORIZED-CONTRACT)
+  ))
+
 (define-public (buy (ft <faktory-token>) (ustx uint))
   (begin
     (asserts! (is-eq DEX-TOKEN (contract-of ft)) ERR-TOKEN-NOT-AUTH)
-    (asserts! (is-eq contract-caller tx-sender) ERR-DIRECT-CALL-REQUIRED)
+    (asserts! (is-valid-caller) ERR-UNAUTHORIZED-CALLER)
     (asserts! (var-get open) ERR-MARKET-CLOSED)
     (asserts! (> ustx u0) ERR-STX-NON-POSITIVE)
     (let ((total-stx (var-get stx-balance))
@@ -108,7 +116,7 @@
 (define-public (sell (ft <faktory-token>) (amount uint))
   (begin
     (asserts! (is-eq DEX-TOKEN (contract-of ft)) ERR-TOKEN-NOT-AUTH)
-    (asserts! (is-eq contract-caller tx-sender) ERR-DIRECT-CALL-REQUIRED)
+    (asserts! (is-valid-caller) ERR-UNAUTHORIZED-CALLER)
     (asserts! (var-get open) ERR-MARKET-CLOSED)
     (asserts! (> amount u0) ERR-FT-NON-POSITIVE)
     (let ((total-stx (var-get stx-balance))
@@ -169,6 +177,5 @@
         type: "faktory-dex-trait-v1", 
         dexContract: (as-contract tx-sender),
         ammReceiver: 'ST2JHG361ZXG51QTKY2NQCVBPPRRE2KZB1HR05NNC,
-        ;; hash: "363acbe80e3698b90cd0500fd8c64c56ec3d2caa674483aeb86d8772e8cf6fe3"  ;; do we need a hash of that contract?
    })
   (ok true))

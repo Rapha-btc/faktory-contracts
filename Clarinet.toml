@@ -5,6 +5,11 @@ authors = []
 telemetry = false
 cache_dir = './.cache'
 requirements = []
+[contracts.buy-with-velar-faktory]
+path = 'contracts/buy-with-velar-faktory.clar'
+clarity_version = 2
+epoch = 2.5
+
 [contracts.faktory-dex-trait-v1]
 path = 'contracts/faktory-dex-trait-v1.clar'
 clarity_version = 2
@@ -25,7 +30,40 @@ path = 'contracts/name-faktory-dex.clar'
 clarity_version = 2
 epoch = 2.5
 
+[contracts.path-apply_staging]
+path = 'contracts/path-apply_staging.clar'
+clarity_version = 2
+epoch = 2.5
 
+[contracts.sip-010-trait-ft-standard]
+path = 'contracts/sip-010-trait-ft-standard.clar'
+clarity_version = 2
+epoch = 2.5
+
+[contracts.tokensoft-token-v4k68639zxz]
+path = 'contracts/tokensoft-token-v4k68639zxz.clar'
+clarity_version = 2
+epoch = 2.5
+
+[contracts.univ2-share-fee-to]
+path = 'contracts/univ2-share-fee-to.clar'
+clarity_version = 2
+epoch = 2.5
+
+[contracts.univ2-share-fee-to-trait]
+path = 'contracts/univ2-share-fee-to-trait.clar'
+clarity_version = 2
+epoch = 2.5
+
+[contracts.wstx]
+path = 'contracts/wstx.clar'
+clarity_version = 2
+epoch = 2.5
+
+[contracts.wstx-pepe]
+path = 'contracts/wstx-pepe.clar'
+clarity_version = 2
+epoch = 2.5
 [repl.analysis]
 passes = ['check_checker']
 
